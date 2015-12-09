@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8983B4ED1AC75D0200968454 /* wifinotimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8983B4EC1AC75D0200968454 /* wifinotimer.png */; };
+		898ADDB51AAE7A90000F697F /* wifiok.png in Resources */ = {isa = PBXBuildFile; fileRef = 898ADDB41AAE7A90000F697F /* wifiok.png */; };
+		898ADDB71AAE7A9D000F697F /* wifing.png in Resources */ = {isa = PBXBuildFile; fileRef = 898ADDB61AAE7A9D000F697F /* wifing.png */; };
+		89A061B31AAC91E90092E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B21AAC91E90092E2A1 /* AppDelegate.m */; };
+		89A061B51AAC91E90092E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B41AAC91E90092E2A1 /* main.m */; };
+		89A061B81AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */; };
+		89A061BA1AAC91E90092E2A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A061B91AAC91E90092E2A1 /* Images.xcassets */; };
+		89A061BD1AAC91E90092E2A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A061BB1AAC91E90092E2A1 /* MainMenu.xib */; };
+		89A061C91AAC91E90092E2A1 /* WiFirestarterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89A061C31AAC91E90092E2A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89A061A41AAC91E90092E2A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89A061AB1AAC91E90092E2A1;
+			remoteInfo = WiFirestarter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8983B4EC1AC75D0200968454 /* wifinotimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifinotimer.png; sourceTree = "<group>"; };
+		898ADDB41AAE7A90000F697F /* wifiok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifiok.png; sourceTree = "<group>"; };
+		898ADDB61AAE7A9D000F697F /* wifing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifing.png; sourceTree = "<group>"; };
+		89A061AC1AAC91E90092E2A1 /* WiFirestarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFirestarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A061B01AAC91E90092E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A061B11AAC91E90092E2A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		89A061B21AAC91E90092E2A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89A061B41AAC91E90092E2A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89A061B71AAC91E90092E2A1 /* WiFirestarter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WiFirestarter.xcdatamodel; sourceTree = "<group>"; };
+		89A061B91AAC91E90092E2A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89A061BC1AAC91E90092E2A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		89A061C21AAC91E90092E2A1 /* WiFirestarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiFirestarterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A061C71AAC91E90092E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiFirestarterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89A061A91AAC91E90092E2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89A061BF1AAC91E90092E2A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89A061A31AAC91E90092E2A1 = {
+			isa = PBXGroup;
+			children = (
+				89A061AE1AAC91E90092E2A1 /* WiFirestarter */,
+				89A061C51AAC91E90092E2A1 /* WiFirestarterTests */,
+				89A061AD1AAC91E90092E2A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89A061AD1AAC91E90092E2A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89A061AC1AAC91E90092E2A1 /* WiFirestarter.app */,
+				89A061C21AAC91E90092E2A1 /* WiFirestarterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89A061AE1AAC91E90092E2A1 /* WiFirestarter */ = {
+			isa = PBXGroup;
+			children = (
+				89A061B11AAC91E90092E2A1 /* AppDelegate.h */,
+				89A061B21AAC91E90092E2A1 /* AppDelegate.m */,
+				898ADDB41AAE7A90000F697F /* wifiok.png */,
+				8983B4EC1AC75D0200968454 /* wifinotimer.png */,
+				898ADDB61AAE7A9D000F697F /* wifing.png */,
+				89A061B91AAC91E90092E2A1 /* Images.xcassets */,
+				89A061BB1AAC91E90092E2A1 /* MainMenu.xib */,
+				89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */,
+				89A061AF1AAC91E90092E2A1 /* Supporting Files */,
+			);
+			path = WiFirestarter;
+			sourceTree = "<group>";
+		};
+		89A061AF1AAC91E90092E2A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89A061B01AAC91E90092E2A1 /* Info.plist */,
+				89A061B41AAC91E90092E2A1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89A061C51AAC91E90092E2A1 /* WiFirestarterTests */ = {
+			isa = PBXGroup;
+			children = (
+				89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */,
+				89A061C61AAC91E90092E2A1 /* Supporting Files */,
+			);
+			path = WiFirestarterTests;
+			sourceTree = "<group>";
+		};
+		89A061C61AAC91E90092E2A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89A061C71AAC91E90092E2A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89A061AB1AAC91E90092E2A1 /* WiFirestarter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89A061CC1AAC91E90092E2A1 /* Build configuration list for PBXNativeTarget "WiFirestarter" */;
+			buildPhases = (
+				89A061A81AAC91E90092E2A1 /* Sources */,
+				89A061A91AAC91E90092E2A1 /* Frameworks */,
+				89A061AA1AAC91E90092E2A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiFirestarter;
+			productName = WiFirestarter;
+			productReference = 89A061AC1AAC91E90092E2A1 /* WiFirestarter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89A061C11AAC91E90092E2A1 /* WiFirestarterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89A061CF1AAC91E90092E2A1 /* Build configuration list for PBXNativeTarget "WiFirestarterTests" */;
+			buildPhases = (
+				89A061BE1AAC91E90092E2A1 /* Sources */,
+				89A061BF1AAC91E90092E2A1 /* Frameworks */,
+				89A061C01AAC91E90092E2A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89A061C41AAC91E90092E2A1 /* PBXTargetDependency */,
+			);
+			name = WiFirestarterTests;
+			productName = WiFirestarterTests;
+			productReference = 89A061C21AAC91E90092E2A1 /* WiFirestarterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89A061A41AAC91E90092E2A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "KUMATA Tomokatsu";
+				TargetAttributes = {
+					89A061AB1AAC91E90092E2A1 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					89A061C11AAC91E90092E2A1 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 89A061AB1AAC91E90092E2A1;
+					};
+				};
+			};
+			buildConfigurationList = 89A061A71AAC91E90092E2A1 /* Build configuration list for PBXProject "WiFirestarter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89A061A31AAC91E90092E2A1;
+			productRefGroup = 89A061AD1AAC91E90092E2A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89A061AB1AAC91E90092E2A1 /* WiFirestarter */,
+				89A061C11AAC91E90092E2A1 /* WiFirestarterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89A061AA1AAC91E90092E2A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A061BA1AAC91E90092E2A1 /* Images.xcassets in Resources */,
+				898ADDB71AAE7A9D000F697F /* wifing.png in Resources */,
+				898ADDB51AAE7A90000F697F /* wifiok.png in Resources */,
+				89A061BD1AAC91E90092E2A1 /* MainMenu.xib in Resources */,
+				8983B4ED1AC75D0200968454 /* wifinotimer.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89A061C01AAC91E90092E2A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89A061A81AAC91E90092E2A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A061B81AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld in Sources */,
+				89A061B51AAC91E90092E2A1 /* main.m in Sources */,
+				89A061B31AAC91E90092E2A1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89A061BE1AAC91E90092E2A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A061C91AAC91E90092E2A1 /* WiFirestarterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89A061C41AAC91E90092E2A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89A061AB1AAC91E90092E2A1 /* WiFirestarter */;
+			targetProxy = 89A061C31AAC91E90092E2A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89A061BB1AAC91E90092E2A1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89A061BC1AAC91E90092E2A1 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89A061CA1AAC91E90092E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		89A061CB1AAC91E90092E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		89A061CD1AAC91E90092E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WiFirestarter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.kmt.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		89A061CE1AAC91E90092E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WiFirestarter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.kmt.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		89A061D01AAC91E90092E2A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WiFirestarterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.kmt.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiFirestarter.app/Contents/MacOS/WiFirestarter";
+			};
+			name = Debug;
+		};
+		89A061D11AAC91E90092E2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WiFirestarterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.kmt.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiFirestarter.app/Contents/MacOS/WiFirestarter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89A061A71AAC91E90092E2A1 /* Build configuration list for PBXProject "WiFirestarter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89A061CA1AAC91E90092E2A1 /* Debug */,
+				89A061CB1AAC91E90092E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89A061CC1AAC91E90092E2A1 /* Build configuration list for PBXNativeTarget "WiFirestarter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89A061CD1AAC91E90092E2A1 /* Debug */,
+				89A061CE1AAC91E90092E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89A061CF1AAC91E90092E2A1 /* Build configuration list for PBXNativeTarget "WiFirestarterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89A061D01AAC91E90092E2A1 /* Debug */,
+				89A061D11AAC91E90092E2A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				89A061B71AAC91E90092E2A1 /* WiFirestarter.xcdatamodel */,
+			);
+			currentVersion = 89A061B71AAC91E90092E2A1 /* WiFirestarter.xcdatamodel */;
+			path = WiFirestarter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 89A061A41AAC91E90092E2A1 /* Project object */;
+}
