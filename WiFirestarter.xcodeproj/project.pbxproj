@@ -16,6 +16,7 @@
 		89A061BA1AAC91E90092E2A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A061B91AAC91E90092E2A1 /* Images.xcassets */; };
 		89A061BD1AAC91E90092E2A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A061BB1AAC91E90092E2A1 /* MainMenu.xib */; };
 		89A061C91AAC91E90092E2A1 /* WiFirestarterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */; };
+		89FE92611C1A1BBC0098A38B /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 89FE92601C1A1BBC0098A38B /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		890C90DF1C1859AB002CC890 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		8983B4EC1AC75D0200968454 /* wifinotimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifinotimer.png; sourceTree = "<group>"; };
 		898ADDB41AAE7A90000F697F /* wifiok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifiok.png; sourceTree = "<group>"; };
 		898ADDB61AAE7A9D000F697F /* wifing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifing.png; sourceTree = "<group>"; };
@@ -44,6 +44,7 @@
 		89A061C21AAC91E90092E2A1 /* WiFirestarterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiFirestarterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A061C71AAC91E90092E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiFirestarterTests.m; sourceTree = "<group>"; };
+		89FE92601C1A1BBC0098A38B /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 		89A061A31AAC91E90092E2A1 = {
 			isa = PBXGroup;
 			children = (
+				89FE92601C1A1BBC0098A38B /* Readme.md */,
 				89A061AE1AAC91E90092E2A1 /* WiFirestarter */,
 				89A061C51AAC91E90092E2A1 /* WiFirestarterTests */,
 				89A061AD1AAC91E90092E2A1 /* Products */,
@@ -90,7 +92,6 @@
 				898ADDB41AAE7A90000F697F /* wifiok.png */,
 				8983B4EC1AC75D0200968454 /* wifinotimer.png */,
 				898ADDB61AAE7A9D000F697F /* wifing.png */,
-				890C90DF1C1859AB002CC890 /* Readme.md */,
 				89A061B91AAC91E90092E2A1 /* Images.xcassets */,
 				89A061BB1AAC91E90092E2A1 /* MainMenu.xib */,
 				89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */,
@@ -229,6 +230,7 @@
 			files = (
 				89A061B81AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld in Sources */,
 				89A061B51AAC91E90092E2A1 /* main.m in Sources */,
+				89FE92611C1A1BBC0098A38B /* Readme.md in Sources */,
 				89A061B31AAC91E90092E2A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
