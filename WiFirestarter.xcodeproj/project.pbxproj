@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890C90DF1C1859AB002CC890 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		8983B4EC1AC75D0200968454 /* wifinotimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifinotimer.png; sourceTree = "<group>"; };
 		898ADDB41AAE7A90000F697F /* wifiok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifiok.png; sourceTree = "<group>"; };
 		898ADDB61AAE7A9D000F697F /* wifing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifing.png; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 				898ADDB41AAE7A90000F697F /* wifiok.png */,
 				8983B4EC1AC75D0200968454 /* wifinotimer.png */,
 				898ADDB61AAE7A9D000F697F /* wifing.png */,
+				890C90DF1C1859AB002CC890 /* Readme.md */,
 				89A061B91AAC91E90092E2A1 /* Images.xcassets */,
 				89A061BB1AAC91E90092E2A1 /* MainMenu.xib */,
 				89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */,
