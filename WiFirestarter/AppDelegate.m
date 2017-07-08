@@ -46,10 +46,10 @@
     pingResponseTime = 0;
     restarting = 0;
     
-    imageWifiOK = [NSImage imageNamed:@"wifiok"];
+    imageWifiOK = [NSImage imageNamed:@"wr-wifiok"];
     [imageWifiOK setTemplate:YES];
-    imageWifiNG = [NSImage imageNamed:@"wifing"];
-    imageWifiNoTimer = [NSImage imageNamed:@"wifinotimer"];
+    imageWifiNG = [NSImage imageNamed:@"wr-wifing"];
+    imageWifiNoTimer = [NSImage imageNamed:@"wr-wifinotimer"];
     
     //
     NSLog(@"WiFirestarter started.");
