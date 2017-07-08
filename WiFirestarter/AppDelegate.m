@@ -37,10 +37,10 @@
     int restarting;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching: (NSNotification *)aNotification {
     // Insert code here to initialize your application
-    interval = 300.0f;    // interval, second
-    pingTime = 2000.0f;   // response, mili second
+    interval = 10.0f;    // interval, second
+    pingTime = 100.0f;   // response, mili second
     displayNoSleep = 1;
     debugMode = 0;
     pingResponseTime = 0;
@@ -62,30 +62,30 @@
     [self checkNetwork];
     
     // Event - receive sleep signal
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(receiveSleepNote:)
-                                                               name:NSWorkspaceWillSleepNotification
-                                                             object:nil];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self
+                                                           selector: @selector(receiveSleepNote:)
+                                                               name: NSWorkspaceWillSleepNotification
+                                                             object: nil];
     // Event - receive wake signal
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(receiveWakeNote:)
-                                                               name:NSWorkspaceDidWakeNotification
-                                                             object:nil];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self
+                                                           selector: @selector(receiveWakeNote:)
+                                                               name: NSWorkspaceDidWakeNotification
+                                                             object: nil];
     // Set Timer
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:interval
-                                               target:self
-                                             selector:@selector(timerCall:)
-                                             userInfo:nil
-                                              repeats:YES];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval: interval
+                                               target: self
+                                             selector: @selector(timerCall:)
+                                             userInfo: nil
+                                              repeats: YES];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
+- (void)applicationWillTerminate: (NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
 
 #pragma mark - Timer
 
-- (void)timerCall:(NSTimer *)timer {
+- (void)timerCall: (NSTimer *)timer {
     if (displayNoSleep == 1) {
         [self checkNetwork];
     }
@@ -93,7 +93,7 @@
 
 #pragma mark - When receive sleep notification on Mac
 
-- (void)receiveSleepNote:(NSNotification *)note {
+- (void)receiveSleepNote: (NSNotification *)note {
     NSLog(@"%@", [note name]);
     displayNoSleep = 0;
     
@@ -103,17 +103,18 @@
 
 #pragma mark - When receive wake up notification on Mac
 
-- (void)receiveWakeNote:(NSNotification *)note {
+- (void)receiveWakeNote: (NSNotification *)note {
     NSLog(@"%@", [note name]);
     displayNoSleep = 1;
     
     // MARK: Start timer again
     if (interval != 0) {
-        myTimer = [NSTimer scheduledTimerWithTimeInterval:interval
-                                                   target:self
-                                                 selector:@selector(timerCall:)
-                                                 userInfo:nil
-                                                  repeats:YES];
+        [self checkNetwork];
+        myTimer = [NSTimer scheduledTimerWithTimeInterval: interval
+                                                   target: self
+                                                 selector: @selector(timerCall:)
+                                                 userInfo: nil
+                                                  repeats: YES];
     }
 }
 
@@ -125,95 +126,101 @@
     
     // Get version
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
-    NSString *version = [info objectForKey:@"CFBundleShortVersionString"];
+    NSString *version = [info objectForKey: @"CFBundleShortVersionString"];
     
     // Submenu 2
     NSMenu *submenu2 = [[NSMenu alloc] init];
-    [submenu2 addItemWithTitle:@"2000 ms"
-                        action:@selector(pingResThreshold:)
-                 keyEquivalent:@""];
-    [submenu2 addItemWithTitle:@"1500 ms"
-                        action:@selector(pingResThreshold:)
-                 keyEquivalent:@""];
-    [submenu2 addItemWithTitle:@"1000 ms"
-                        action:@selector(pingResThreshold:)
-                 keyEquivalent:@""];
+    [submenu2 addItemWithTitle: @"2000 ms"
+                        action: @selector(pingResThreshold:)
+                 keyEquivalent: @""];
+    [submenu2 addItemWithTitle: @"1500 ms"
+                        action: @selector(pingResThreshold:)
+                 keyEquivalent: @""];
+    [submenu2 addItemWithTitle: @"1000 ms"
+                        action: @selector(pingResThreshold:)
+                 keyEquivalent: @""];
+    [submenu2 addItemWithTitle: @"100 ms"
+                        action: @selector(pingResThreshold:)
+                 keyEquivalent: @""];
     
     // Submenu 1
     NSMenu *submenu = [[NSMenu alloc] init];
-    [submenu addItemWithTitle:@"300 sec"
-                       action:@selector(interval:)
-                keyEquivalent:@""];
-    [submenu addItemWithTitle:@"120 sec"
-                       action:@selector(interval:)
-                keyEquivalent:@""];
-    [submenu addItemWithTitle:@"20 sec"
-                       action:@selector(interval:)
-                keyEquivalent:@""];
-    [submenu addItemWithTitle:@"No Repeat"
-                       action:@selector(norepeat)
-                keyEquivalent:@""];
+    [submenu addItemWithTitle: @"300 sec"
+                       action: @selector(interval:)
+                keyEquivalent: @""];
+    [submenu addItemWithTitle: @"120 sec"
+                       action: @selector(interval:)
+                keyEquivalent: @""];
+    [submenu addItemWithTitle: @"20 sec"
+                       action: @selector(interval:)
+                keyEquivalent: @""];
+    [submenu addItemWithTitle: @"10 sec"
+                       action: @selector(interval:)
+                keyEquivalent: @""];
+    [submenu addItemWithTitle: @"No Repeat"
+                       action: @selector(norepeat)
+                keyEquivalent: @""];
     
     // Main Menu
     NSMenu *menu = [[NSMenu alloc] init];
     // Show version
-    [menu addItemWithTitle:[NSString stringWithFormat:@"Version: %@", version]
-                    action:nil
-             keyEquivalent:@""];
+    [menu addItemWithTitle: [NSString stringWithFormat: @"Version: %@", version]
+                    action: nil
+             keyEquivalent: @""];
     // Show Wi-Fi Interface
-    [menu addItemWithTitle:[NSString stringWithFormat:@"Wi-Fi Interface: %@", ifaceName]
-                    action:nil
-             keyEquivalent:@""];
+    [menu addItemWithTitle: [NSString stringWithFormat: @"Wi-Fi Interface: %@", ifaceName]
+                    action: nil
+             keyEquivalent: @""];
     // Show ping response time
-    [menu addItemWithTitle:[NSString stringWithFormat:@"ICMP Response: %5.1f ms", pingResponseTime]
-                    action:nil
-             keyEquivalent:@""];
+    [menu addItemWithTitle: [NSString stringWithFormat: @"ICMP Response: %5.1f ms", pingResponseTime]
+                    action: nil
+             keyEquivalent: @""];
     // Show Last checking date time
-    [menu addItemWithTitle:@"Last Date:"
-                    action:nil
-             keyEquivalent:@""];
+    [menu addItemWithTitle: @"Last Date:"
+                    action: nil
+             keyEquivalent: @""];
     // Separator
-    [menu addItem:[NSMenuItem separatorItem]];
+    [menu addItem: [NSMenuItem separatorItem]];
     // Submenu Checking interval
-    [menu setSubmenu:submenu forItem:[menu addItemWithTitle:@"Interval ICMP Request"
-                                                     action:nil
-                                              keyEquivalent:@""]];
+    [menu setSubmenu: submenu forItem: [menu addItemWithTitle: @"Interval ICMP Request"
+                                                       action: nil
+                                                keyEquivalent: @""]];
     // Submenu 2 Threshold ICMP response time
-    [menu setSubmenu:submenu2 forItem:[menu addItemWithTitle:@"Threshold ICMP Response"
-                                                      action:nil
-                                               keyEquivalent:@""]];
+    [menu setSubmenu: submenu2 forItem: [menu addItemWithTitle: @"Threshold ICMP Response"
+                                                        action: nil
+                                                 keyEquivalent: @""]];
     // Manual Checking
-    [menu addItemWithTitle:@"ICMP Reqquest Now"
-                    action:@selector(checkNetwork)
-             keyEquivalent:@""];
+    [menu addItemWithTitle: @"ICMP Reqquest Now"
+                    action: @selector(checkNetwork)
+             keyEquivalent: @""];
     // Manual restart
     if (ifaceName != NULL) {
-        [menu addItemWithTitle:[NSString stringWithFormat:@"Turn Wi-Fi(%@) Off/On", ifaceName]
-                        action:@selector(RestartWiFi)
-                 keyEquivalent:@"r"];
+        [menu addItemWithTitle: [NSString stringWithFormat: @"Turn Wi-Fi(%@) Off/On", ifaceName]
+                        action: @selector(RestartWiFi)
+                 keyEquivalent: @"r"];
     } else {
-        [menu addItemWithTitle:@"Wi-Fi interface not found."
-                        action:nil
-                 keyEquivalent:@""];
+        [menu addItemWithTitle: @"Wi-Fi interface not found."
+                        action: nil
+                 keyEquivalent: @""];
     }
     // for debug mode
-    [menu addItemWithTitle:@"for AppleSeed User"
-                    action:@selector(debugmode)
-             keyEquivalent:@""];
+    [menu addItemWithTitle: @"for AppleSeed User"
+                    action: @selector(debugmode)
+             keyEquivalent: @""];
     // Separator
-    [menu addItem:[NSMenuItem separatorItem]];
+    [menu addItem: [NSMenuItem separatorItem]];
     // Quit App
-    [menu addItemWithTitle:@"Quit WiFirestarter"
-                    action:@selector(terminate:)
-             keyEquivalent:@"q"];
+    [menu addItemWithTitle: @"Quit WiFirestarter"
+                    action: @selector(terminate:)
+             keyEquivalent: @"q"];
     
     // Make menu in statusbar
     NSStatusBar *systemStatusBar = [NSStatusBar systemStatusBar];
-    _statusItem = [systemStatusBar statusItemWithLength:NSVariableStatusItemLength];
-    [_statusItem setImage:imageWifiOK];
-    [_statusItem setEnabled:YES];
-    [_statusItem setHighlightMode:YES];
-    [_statusItem setMenu:menu];
+    _statusItem = [systemStatusBar statusItemWithLength: NSVariableStatusItemLength];
+    [_statusItem setImage: imageWifiOK];
+    [_statusItem setEnabled: YES];
+    [_statusItem setHighlightMode: YES];
+    [_statusItem setMenu: menu];
 }
 
 #pragma mark - Check Wi-Fi connection by ICMP
@@ -223,14 +230,14 @@
     NSDate *checkingTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
-    NSString *datetimeStr = [dateFormatter stringFromDate:checkingTime];
+    NSString *datetimeStr = [dateFormatter stringFromDate: checkingTime];
     
     // Apply last date to menu
-    [_statusItem.menu removeItemAtIndex:3];
-    [_statusItem.menu insertItemWithTitle:[NSString stringWithFormat:@"Last Date: %@", datetimeStr]
-                                   action:nil
-                            keyEquivalent:@""
-                                  atIndex:3];
+    [_statusItem.menu removeItemAtIndex: 3];
+    [_statusItem.menu insertItemWithTitle: [NSString stringWithFormat: @"Last Date: %@", datetimeStr]
+                                   action: nil
+                            keyEquivalent: @""
+                                  atIndex: 3];
     
     if (restarting == 0) {
         // Get Wi-Fi interface name
@@ -238,43 +245,43 @@
         
         if (ifaceName == NULL) {
             // Not found interface
-            [_statusItem.menu removeItemAtIndex:1];
-            [_statusItem.menu insertItemWithTitle:@"Wi-Fi interface not found."
-                                           action:nil
-                                    keyEquivalent:@""
-                                          atIndex:1];
+            [_statusItem.menu removeItemAtIndex: 1];
+            [_statusItem.menu insertItemWithTitle: @"Wi-Fi interface not found."
+                                           action: nil
+                                    keyEquivalent: @""
+                                          atIndex: 1];
         } else {
             // Found interface
-            [_statusItem.menu removeItemAtIndex:1];
-            [_statusItem.menu insertItemWithTitle:[NSString stringWithFormat:@"Wi-Fi Interface: %@", ifaceName]
-                                           action:nil
-                                    keyEquivalent:@""
-                                          atIndex:1];
+            [_statusItem.menu removeItemAtIndex: 1];
+            [_statusItem.menu insertItemWithTitle: [NSString stringWithFormat: @"Wi-Fi Interface: %@", ifaceName]
+                                           action: nil
+                                    keyEquivalent: @""
+                                          atIndex: 1];
         }
         
         // Get default route address
         NSString *defaultRouterAddr = [self getDefaultRouter];
         
         //
-        if ([self isValidIPAddress:defaultRouterAddr] == 1) {
+        if ([self isValidIPAddress: defaultRouterAddr] == 1) {
             // Get ICMP response time
-            pingResponseTime = [self getICMPresponse:defaultRouterAddr];
+            pingResponseTime = [self getICMPresponse: defaultRouterAddr];
             
             // Change menu item
-            [_statusItem.menu removeItemAtIndex:2];
-            [_statusItem.menu insertItemWithTitle:[NSString stringWithFormat:@"ICMP Response: %5.1f ms", pingResponseTime]
-                                           action:nil
-                                    keyEquivalent:@""
-                                          atIndex:2];
+            [_statusItem.menu removeItemAtIndex: 2];
+            [_statusItem.menu insertItemWithTitle: [NSString stringWithFormat: @"ICMP Response: %5.1f ms", pingResponseTime]
+                                           action: nil
+                                    keyEquivalent: @""
+                                          atIndex: 2];
             
             // Processing
             if (pingResponseTime > 0 && pingResponseTime <= pingTime) {
                 // Wi-Fi OK
-                [_statusItem setImage:imageWifiOK];
+                [_statusItem setImage: imageWifiOK];
 //                NSLog(@"ICMP response OK: %f ms, %@", pingResponseTime, defaultRouterAddr);
             } else {
                 // Wi-Fi NG
-                [_statusItem setImage:imageWifiNG];
+                [_statusItem setImage: imageWifiNG];
 //                NSLog(@"ICMP response NG: %f ms, %@", pingResponseTime, defaultRouterAddr);
                 
                 if (debugMode == 0) {
@@ -287,14 +294,14 @@
                     NSUserNotification *myNotification = [[NSUserNotification alloc] init];
                     myNotification.title = @"ICMP No Response";
                     myNotification.informativeText = @"Wi-Fi has been restarted.";
-                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:myNotification];
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification: myNotification];
                 } else {
                     // Debug mode for AppleSeed User
                     
                     // CLI command for debug.
                     NSString *s = [NSString stringWithFormat:@"tell application \"Terminal\" to do script \"sudo /usr/libexec/airportd msglevel 0x0000000200000101 && sudo tcpdump -i %@ -s 0 -w ~/Desktop/DumpFile.pcap & sudo /System/Library/Frameworks/SystemConfiguration.framework/Resources/get-mobility-info & sudo sysdiagnose\"", ifaceName];
-                    NSAppleScript *as = [[NSAppleScript alloc] initWithSource:s];
-                    [as executeAndReturnError:nil];
+                    NSAppleScript *as = [[NSAppleScript alloc] initWithSource: s];
+                    [as executeAndReturnError: nil];
                     
                     // Stop timer
                     [myTimer invalidate];
@@ -303,7 +310,7 @@
                     NSUserNotification *myNotification = [[NSUserNotification alloc] init];
                     myNotification.title = @"ICMP No Response";
                     myNotification.informativeText = @"Timer is stoped. Please select interval from menu.";
-                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:myNotification];
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification: myNotification];
                 }
             }
         } else {
@@ -319,14 +326,14 @@
 
 - (void)RestartWiFi {
     restarting = 1;
-    [_statusItem setImage:imageWifiOK];
+    [_statusItem setImage: imageWifiOK];
     
     // turn off
-    NSString *cmdOff = [NSString stringWithFormat:@"networksetup -setairportpower %@ off", ifaceName];
+    NSString *cmdOff = [NSString stringWithFormat: @"networksetup -setairportpower %@ off", ifaceName];
     execShell(cmdOff);
     
     // turn on
-    NSString *cmdOn = [NSString stringWithFormat:@"networksetup -setairportpower %@ on", ifaceName];
+    NSString *cmdOn = [NSString stringWithFormat: @"networksetup -setairportpower %@ on", ifaceName];
     execShell(cmdOn);
     
     restarting = 0;
@@ -334,29 +341,29 @@
 
 #pragma mark - Set interval from menu
 
-- (void)interval:(id)sender {
-    interval = [self getInterval:sender];
+- (void)interval: (id)sender {
+    interval = [self getInterval: sender];
     [myTimer invalidate];
-    [_statusItem setImage:imageWifiOK];
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:interval
-                                               target:self
-                                             selector:@selector(timerCall:)
-                                             userInfo:nil
-                                              repeats:YES];
+    [_statusItem setImage: imageWifiOK];
+    myTimer = [NSTimer scheduledTimerWithTimeInterval: interval
+                                               target: self
+                                             selector: @selector(timerCall:)
+                                             userInfo: nil
+                                              repeats: YES];
     NSLog(@"Changing ICMP request interval: %5.1f sec", interval);
 }
 
 - (void)norepeat {
     interval = 0;
     [myTimer invalidate];
-    [_statusItem setImage:imageWifiNoTimer];
+    [_statusItem setImage: imageWifiNoTimer];
     NSLog(@"Changing ICMP request interval: No Repeat");
 }
 
 #pragma mark - Set ping response threshold from menu
 
-- (void)pingResThreshold:(id)sender {
-    pingTime = [self getThreshold:sender];
+- (void)pingResThreshold: (id)sender {
+    pingTime = [self getThreshold: sender];
     NSLog(@"Changing ICMP response threshold: %6.1f ms", pingTime);
 }
 
@@ -374,71 +381,87 @@
 
 #pragma mark - Put checking mark on menu and sub menu
 
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+- (BOOL)validateMenuItem: (NSMenuItem *)menuItem {
     // Interval
-    if ([[menuItem title] isEqual:@"300 sec"] && [menuItem action] == @selector(interval:)) {
+    if ([[menuItem title] isEqual: @"300 sec"] && [menuItem action] == @selector(interval:)) {
         if (interval == 300.f) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
     
-    if ([[menuItem title] isEqual:@"120 sec"] && [menuItem action] == @selector(interval:)) {
+    if ([[menuItem title] isEqual: @"120 sec"] && [menuItem action] == @selector(interval:)) {
         if (interval == 120.f) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
     
-    if ([[menuItem title] isEqual:@"20 sec"] && [menuItem action] == @selector(interval:)) {
+    if ([[menuItem title] isEqual: @"20 sec"] && [menuItem action] == @selector(interval:)) {
         if (interval == 20.f) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
+        }
+    }
+    
+    if ([[menuItem title] isEqual: @"10 sec"] && [menuItem action] == @selector(interval:)) {
+        if (interval == 10.f) {
+            [menuItem setState: NSOnState];
+        } else {
+            [menuItem setState: NSOffState];
         }
     }
     
     if ([menuItem action] == @selector(norepeat)) {
         if (interval == 0) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
     
     // Response threshold
-    if ([[menuItem title] isEqual:@"2000 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
+    if ([[menuItem title] isEqual: @"2000 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
         if (pingTime == 2000) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
 
-    if ([[menuItem title] isEqual:@"1500 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
+    if ([[menuItem title] isEqual: @"1500 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
         if (pingTime == 1500) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
     
-    if ([[menuItem title] isEqual:@"1000 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
+    if ([[menuItem title] isEqual: @"1000 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
         if (pingTime == 1000) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
+        }
+    }
+    
+    if ([[menuItem title] isEqual: @"100 ms"] && [menuItem action] == @selector(pingResThreshold:)) {
+        if (pingTime == 100) {
+            [menuItem setState: NSOnState];
+        } else {
+            [menuItem setState: NSOffState];
         }
     }
     
     // Debug mode
     if ([menuItem action] == @selector(debugmode)) {
         if (debugMode == 1) {
-            [menuItem setState:NSOnState];
+            [menuItem setState: NSOnState];
         } else {
-            [menuItem setState:NSOffState];
+            [menuItem setState: NSOffState];
         }
     }
     
@@ -447,9 +470,9 @@
 
 #pragma mark - Get ICMP response time
 
-- (float)getICMPresponse:defaultRouterAddr {
+- (float)getICMPresponse: defaultRouterAddr {
     // Get ping response
-    NSString *cmd = [NSString stringWithFormat:@"ping -c 3 %@ | grep 'round-trip' | awk -F'/' '{print $5}'", defaultRouterAddr];
+    NSString *cmd = [NSString stringWithFormat: @"ping -c 3 %@ | grep 'round-trip' | awk -F'/' '{print $5}'", defaultRouterAddr];
     NSString *output = execShell(cmd);
     
     return output.floatValue;
@@ -467,23 +490,23 @@
 
 - (NSString *)getDefaultRouter {
     NSString *output = execShell(@"netstat -nr | grep -i default | awk '{print $2}' | head -1");
-    output = [output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    output = [output stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return output;
 }
 
 #pragma mark - Get interval from sub menu
 
-- (float)getInterval:(id)sender {
+- (float)getInterval: (id)sender {
     NSMenuItem *mi = (NSMenuItem *)sender;
     NSString *tmp = (NSString *)mi.title;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@" sec"
-                                                                           options:NSRegularExpressionCaseInsensitive
-                                                                             error:nil];
-    NSString *tmp2 = [regex stringByReplacingMatchesInString:tmp
-                                                     options:0
-                                                       range:NSMakeRange(0, [tmp length])
-                                                withTemplate:@""];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: @" sec"
+                                                                           options: NSRegularExpressionCaseInsensitive
+                                                                             error: nil];
+    NSString *tmp2 = [regex stringByReplacingMatchesInString: tmp
+                                                     options: 0
+                                                       range: NSMakeRange(0, [tmp length])
+                                                withTemplate: @""];
     float ret = tmp2.floatValue;
     
     return ret;
@@ -491,16 +514,16 @@
 
 #pragma mark - Get threshold from sub menu
 
-- (float)getThreshold:(id)sender {
+- (float)getThreshold: (id)sender {
     NSMenuItem *mi = (NSMenuItem *)sender;
     NSString *tmp = (NSString *)mi.title;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@" ms"
-                                                                           options:NSRegularExpressionCaseInsensitive
-                                                                             error:nil];
-    NSString *tmp2 = [regex stringByReplacingMatchesInString:tmp
-                                                     options:0
-                                                       range:NSMakeRange(0, [tmp length])
-                                                withTemplate:@""];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: @" ms"
+                                                                           options: NSRegularExpressionCaseInsensitive
+                                                                             error: nil];
+    NSString *tmp2 = [regex stringByReplacingMatchesInString: tmp
+                                                     options: 0
+                                                       range: NSMakeRange(0, [tmp length])
+                                                withTemplate: @""];
     float ret = tmp2.floatValue;
     
     return ret;
@@ -508,7 +531,7 @@
 
 #pragma mark - Validation IP address
 
-- (BOOL)isValidIPAddress:(NSString *)ip {
+- (BOOL)isValidIPAddress: (NSString *)ip {
     const char *utf8 = [ip UTF8String];
     
     struct in_addr dst;
@@ -526,10 +549,10 @@
 
 NSMutableAttributedString *attrString(NSString *str) {
     NSMutableAttributedString *initAttrStr;
-    initAttrStr = [[NSMutableAttributedString alloc] initWithString:str];
-    [initAttrStr addAttribute:NSFontAttributeName
-                        value:[NSFont systemFontOfSize:9.0f]
-                        range:NSMakeRange(0, [initAttrStr length])];
+    initAttrStr = [[NSMutableAttributedString alloc] initWithString: str];
+    [initAttrStr addAttribute: NSFontAttributeName
+                        value: [NSFont systemFontOfSize: 9.0f]
+                        range: NSMakeRange(0, [initAttrStr length])];
 //    [initAttrStr addAttribute:NSFontAttributeName
 //                        value:[NSFont fontWithName:@"Lucida Grande" size:9.0f]
 //                        range:NSMakeRange(0, [initAttrStr length])];
@@ -542,16 +565,16 @@ NSString *execShell(NSString *command) {
     NSTask *task = [[NSTask alloc] init];
     NSPipe *pipe = [[NSPipe alloc] init];
     
-    [task setLaunchPath:@"/bin/sh"];
-    [task setArguments:[NSArray arrayWithObjects:@"-c", command, nil]];
+    [task setLaunchPath: @"/bin/sh"];
+    [task setArguments: [NSArray arrayWithObjects: @"-c", command, nil]];
     
-    [task setStandardOutput:pipe];
+    [task setStandardOutput: pipe];
     [task launch];
     
     NSFileHandle *handle = [pipe fileHandleForReading];
     NSData *data = [handle readDataToEndOfFile];
-    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    result = [result stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *result = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+    result = [result stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return result;
 }

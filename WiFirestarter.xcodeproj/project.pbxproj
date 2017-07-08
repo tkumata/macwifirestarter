@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8983B4ED1AC75D0200968454 /* wifinotimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8983B4EC1AC75D0200968454 /* wifinotimer.png */; };
-		898ADDB51AAE7A90000F697F /* wifiok.png in Resources */ = {isa = PBXBuildFile; fileRef = 898ADDB41AAE7A90000F697F /* wifiok.png */; };
-		898ADDB71AAE7A9D000F697F /* wifing.png in Resources */ = {isa = PBXBuildFile; fileRef = 898ADDB61AAE7A9D000F697F /* wifing.png */; };
 		89A061B31AAC91E90092E2A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B21AAC91E90092E2A1 /* AppDelegate.m */; };
 		89A061B51AAC91E90092E2A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B41AAC91E90092E2A1 /* main.m */; };
 		89A061B81AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */; };
 		89A061BA1AAC91E90092E2A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A061B91AAC91E90092E2A1 /* Images.xcassets */; };
 		89A061BD1AAC91E90092E2A1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A061BB1AAC91E90092E2A1 /* MainMenu.xib */; };
 		89A061C91AAC91E90092E2A1 /* WiFirestarterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A061C81AAC91E90092E2A1 /* WiFirestarterTests.m */; };
-		89FE92611C1A1BBC0098A38B /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 89FE92601C1A1BBC0098A38B /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8983B4EC1AC75D0200968454 /* wifinotimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifinotimer.png; sourceTree = "<group>"; };
-		898ADDB41AAE7A90000F697F /* wifiok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifiok.png; sourceTree = "<group>"; };
-		898ADDB61AAE7A9D000F697F /* wifing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wifing.png; sourceTree = "<group>"; };
 		89A061AC1AAC91E90092E2A1 /* WiFirestarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFirestarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A061B01AAC91E90092E2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A061B11AAC91E90092E2A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,9 +82,6 @@
 			children = (
 				89A061B11AAC91E90092E2A1 /* AppDelegate.h */,
 				89A061B21AAC91E90092E2A1 /* AppDelegate.m */,
-				898ADDB41AAE7A90000F697F /* wifiok.png */,
-				8983B4EC1AC75D0200968454 /* wifinotimer.png */,
-				898ADDB61AAE7A9D000F697F /* wifing.png */,
 				89A061B91AAC91E90092E2A1 /* Images.xcassets */,
 				89A061BB1AAC91E90092E2A1 /* MainMenu.xib */,
 				89A061B61AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld */,
@@ -170,7 +160,7 @@
 		89A061A41AAC91E90092E2A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "KUMATA Tomokatsu";
 				TargetAttributes = {
 					89A061AB1AAC91E90092E2A1 = {
@@ -207,10 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A061BA1AAC91E90092E2A1 /* Images.xcassets in Resources */,
-				898ADDB71AAE7A9D000F697F /* wifing.png in Resources */,
-				898ADDB51AAE7A90000F697F /* wifiok.png in Resources */,
 				89A061BD1AAC91E90092E2A1 /* MainMenu.xib in Resources */,
-				8983B4ED1AC75D0200968454 /* wifinotimer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +217,6 @@
 			files = (
 				89A061B81AAC91E90092E2A1 /* WiFirestarter.xcdatamodeld in Sources */,
 				89A061B51AAC91E90092E2A1 /* main.m in Sources */,
-				89FE92611C1A1BBC0098A38B /* Readme.md in Sources */,
 				89A061B31AAC91E90092E2A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +264,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -288,6 +276,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -320,8 +309,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -330,6 +321,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
